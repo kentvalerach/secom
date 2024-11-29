@@ -109,6 +109,6 @@ xgb.plot.importance(importance_matrix = importance, top_n = 10, main = "Top 10 C
 # ==============
 
 # Guardo el modelo para futuros analisis
-if (!dir.exists("C:/SECOM_Analysis/models")) {
-  dir.create("C:/SECOM_Analysis/models", recursive = TRUE)
+if (!dir.exists("data/SECOM_Analysis/models")) {
+  dir.create("data/SECOM_Analysis/models", recursive = TRUE)
 }

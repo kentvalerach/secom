@@ -8,6 +8,8 @@
 
 # 1. Configuración inicial
 install.packages("xgboost")
+install.packages("caret")
+install.packages("pROC")
 
 library(xgboost)
 library(caret)

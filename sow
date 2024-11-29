@@ -1,0 +1,40 @@
+Proyecto de Análisis de Datos
+
+Analista de Datos: Kent Valera Chirinos
+Cliente/Patrocinador: Fábrica de chips (representada por los datos proporcionados por Klagge)
+________________________________________
+Propósito
+Este proyecto tiene como objetivo analizar los datos de producción de una fábrica de chips para identificar patrones en los defectos de los productos y proponer estrategias basadas en datos para mejorar la calidad y reducir costos. El cliente busca soluciones predictivas y prácticas que optimicen su proceso de manufactura y minimicen el impacto financiero de los productos defectuosos.
+________________________________________
+Alcance / Actividades Principales del Proyecto
+Actividad	Descripción
+1. Definición del problema	Identificar las necesidades del cliente y establecer las preguntas clave que guiarán el análisis.
+2. Preparación de datos	Recopilar, limpiar y organizar los datos provenientes de sensores de producción. Documentar cualquier problema encontrado.
+3. Análisis exploratorio	Analizar las características principales del conjunto de datos para entender las tendencias y patrones iniciales.
+4. Modelado predictivo	Implementar y evaluar tres modelos predictivos: modelo básico, modelo optimizado con hiperparámetros y XGBoost.
+5. Visualización	Crear visualizaciones para comunicar los hallazgos clave y el impacto potencial de los modelos.
+6. Presentación final	Elaborar un informe y una presentación clara y convincente con recomendaciones accionables.
+________________________________________
+Este proyecto no incluye
+•	Recolección de datos fuera del conjunto proporcionado (SECOM).
+•	Implementación técnica de los modelos en el sistema de producción del cliente.
+•	Análisis de datos financieros o de ventas relacionados con la fábrica.
+________________________________________
+Entregables
+Entregable	Descripción/Detalles
+Informe de análisis	Documento detallado con hallazgos, visualizaciones y recomendaciones.
+Modelos predictivos	Scripts y resultados de los tres modelos (básico, optimizado e XGBoost).
+Visualizaciones	Gráficas de desempeño, importancia de características y análisis de tendencias.
+Presentación ejecutiva	Presentación para el cliente con un resumen de hallazgos y acciones recomendadas.
+________________________________________
+Cronograma / Hitos Principales
+Hito	Fecha Estimada de Finalización	Descripción/Detalles
+Definición del problema	Día 1	Establecer las preguntas clave y los objetivos del análisis.
+Preparación de los datos	Día 2	Limpieza, balanceo y preprocesamiento de los datos para los modelos.
+Análisis exploratorio	Día 3	Identificación de patrones y correlaciones iniciales en los datos.
+Modelado predictivo	Día 4	Implementación y evaluación de los tres modelos.
+Visualización de resultados	Día 5	Creación de gráficos y resúmenes visuales.
+Preparación del informe	Día 6	Elaboración del informe y presentación para el cliente.
+________________________________________
+Fecha Estimada de Finalización
+Si todo va según lo planeado y se cuenta con los recursos necesarios, el proyecto estará completo en 7 días.

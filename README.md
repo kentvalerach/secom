@@ -70,16 +70,16 @@ Antes de ejecutar los scripts, asegúrate de tener instalados los siguientes paq
 install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR"))
 
 
-# Resumen del Proyecto
+## **Resumen del Proyecto**
 
-Este proyecto analiza datos de producción de una fábrica de chips para identificar patrones en los defectos y proponer estrategias de mejora basadas en datos. Se desarrollaron tres modelos predictivos para clasificar productos defectuosos: un modelo básico de Random Forest, un modelo optimizado con hiperparámetros y un modelo XGBoost. Cada modelo fue evaluado en términos de precisión, sensibilidad y AUC para determinar su efectividad en la tarea. 
+Este proyecto analiza datos de producción de una fábrica de chips para identificar patrones en los defectos y proponer estrategias de mejora basadas en datos. Se desarrollaron tres modelos predictivos para clasificar productos defectuosos: un modelo básico de Random Forest, un modelo optimizado con hiperparámetros y un modelo XGBoost. Cada modelo fue evaluado en términos de precisión, sensibilidad y AUC para determinar su efectividad en la tarea.  
 
-## Informes y Documentos
+## ***Informes y Documentos**
 
-- [Informe Modelo Básico Random Forest](enlace_al_informe_basico)
-- [Informe Modelo Random Forest con Hiperparámetros](enlace_al_informe_hiperparametros)
-- [Informe Modelo XGBoost](enlace_al_informe_xgboost)
+- [Informe Modelo Básico Random Forest](https://github.com/kentvalerach/secom/blob/main/Informe_ramdom_forest_basico.pdf)
+- [Informe Modelo Random Forest con Hiperparámetros](https://github.com/kentvalerach/secom/blob/main/Informe_ramdom_forest_Hiperparametros.pdf)
+- [Informe Modelo XGBoost](https://github.com/kentvalerach/secom/blob/main/Informe_modelo_xgboost.pdf)
 - [Statement of Work (SOW)](enlace_al_sow)
 
-El objetivo final es proporcionar recomendaciones accionables para mejorar la calidad y reducir costos en la producción de chips.
+El objetivo final es proporcionar recomendaciones accionables para mejorar la calidad y reducir costos en la producción de chips y aumentar la producción.
 

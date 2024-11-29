@@ -69,6 +69,9 @@ Antes de ejecutar los scripts, asegúrate de tener instalados los siguientes paq
 ```R
 install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR"))
 
+---
+
+
 
 ## **Resumen del Proyecto**
 

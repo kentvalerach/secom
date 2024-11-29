@@ -1,0 +1,10 @@
+{
+  "name": "R Environment",
+  "image": "rocker/r-ver:4.3.0",
+  "postCreateCommand": "R -e \"install.packages(c('tidyverse', 'caret', 'xgboost', 'randomForest', 'pROC', 'DMwR'))\"",
+  "customizations": {
+    "vscode": {
+      "extensions": ["Ikuyadeu.r", "REditorSupport.r-lsp"]
+    }
+  }
+}

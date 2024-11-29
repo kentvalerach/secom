@@ -13,7 +13,7 @@ Este repositorio contiene los scripts y resultados del análisis de datos llevad
   - `secom_random_forest.R`: Implementación de Random Forest básico.
   - `secom_random_forest_hyperparameters.R`: Random Forest con optimización de hiperparámetros.
   - `secom_data_xboost.R`: Implementación de XGBoost.
-- **`results/`**: Visualizaciones y métricas generadas por los modelos.
+- **`results/`**: Informes de la elaboración de scripts paso a paso, sow, métricas generadas por los modelos conclusiones, visualizaciones, ajustes y optimizacion.
 - **`README.md`**: Este archivo de documentación.
 
 ---

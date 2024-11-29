@@ -1,5 +1,5 @@
 # secom
-Quality Optimization in Chip Production: A Data-Driven Approach
+
 # **Optimización de la Calidad en la Producción de Chips: Un Enfoque Basado en Datos**
 
 Este repositorio contiene los scripts y resultados del análisis de datos llevado a cabo para predecir productos defectuosos y priorizar áreas de mejora en la producción de chips. Se implementaron tres modelos de machine learning: Random Forest básico, Random Forest con hiperparámetros y XGBoost, representando una evolución progresiva para un primer proyecto.
@@ -59,6 +59,7 @@ El objetivo de este proyecto es analizar datos de sensores provenientes de una f
 - **Área Bajo la Curva (AUC):** 0.7519
 - **Observación:** Modelo final que muestra el mejor desempeño para identificar productos defectuosos.
 
+
 ---
 
 ## **Requisitos**
@@ -67,3 +68,18 @@ Antes de ejecutar los scripts, asegúrate de tener instalados los siguientes paq
 
 ```R
 install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR"))
+
+
+# Resumen del Proyecto
+
+Este proyecto analiza datos de producción de una fábrica de chips para identificar patrones en los defectos y proponer estrategias de mejora basadas en datos. Se desarrollaron tres modelos predictivos para clasificar productos defectuosos: un modelo básico de Random Forest, un modelo optimizado con hiperparámetros y un modelo XGBoost. Cada modelo fue evaluado en términos de precisión, sensibilidad y AUC para determinar su efectividad en la tarea. 
+
+## Informes y Documentos
+
+- [Informe Modelo Básico Random Forest](enlace_al_informe_basico)
+- [Informe Modelo Random Forest con Hiperparámetros](enlace_al_informe_hiperparametros)
+- [Informe Modelo XGBoost](enlace_al_informe_xgboost)
+- [Statement of Work (SOW)](enlace_al_sow)
+
+El objetivo final es proporcionar recomendaciones accionables para mejorar la calidad y reducir costos en la producción de chips.
+

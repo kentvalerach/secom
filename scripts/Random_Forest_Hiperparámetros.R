@@ -3,9 +3,9 @@
 # ============
 
 # Dataset Klagge
-secom_data <- read.csv("C:/SECOM_Analysis/data/uci_secom.csv")
+secom_data <- read.csv("data/uci_secom.csv")
 
-# Verificar que el dataset se cargÛ correctamente
+# Verificar que el dataset se carg√≥ correctamente
 dim(secom_data)      # Dimensiones del dataset
 colnames(secom_data) # Nombres de columnas
 head(secom_data)     # Primeras filas del dataset
@@ -24,10 +24,10 @@ na_percentage <- colMeans(is.na(secom_data)) * 100
 na_counts[na_counts > 0]  # Columnas con valores faltantes
 na_percentage[na_percentage > 0]  # Porcentaje de valores faltantes
 
-# Eliminar columnas con m·s del 50% de NA
+# Eliminar columnas con m√°s del 50% de NA
 secom_data <- secom_data[, colMeans(is.na(secom_data)) < 0.5]
 
-# Verificar dimensiones despuÈs de eliminar columnas
+# Verificar dimensiones despu√©s de eliminar columnas
 dim(secom_data)
 
 # Imputar valores faltantes con la mediana
@@ -42,7 +42,7 @@ colSums(is.na(secom_data))
 # NORMALIZACION Y ESCALAR DATOS
 # =============================
 
-# Escalar datos numÈricos (excluyendo la primera y ˙ltima columna)
+# Escalar datos num√©ricos (excluyendo la primera y √∫ltima columna)
 scaled_data <- scale(secom_data[, -c(1, ncol(secom_data))])
 
 # Verificar dimensiones del conjunto escalado
@@ -57,7 +57,7 @@ col_var <- apply(scaled_data, 2, var)
 # Filtrar columnas con varianza mayor a 0
 scaled_data <- scaled_data[, col_var > 0]
 
-# Verificar dimensiones despuÈs de eliminar columnas de varianza cero
+# Verificar dimensiones despu√©s de eliminar columnas de varianza cero
 dim(scaled_data)
 
 # =============================
@@ -75,7 +75,7 @@ table(secom_data$Pass.Fail)
 # GUARDAR DATASET LIMPIO
 # =======================
 
-write.csv(secom_data, "C:/SECOM_Analysis/data/cleaned_secom.csv", row.names = FALSE)
+write.csv(secom_data, "data/cleaned_secom.csv", row.names = FALSE)
 
 
 # ==============
@@ -85,11 +85,11 @@ write.csv(secom_data, "C:/SECOM_Analysis/data/cleaned_secom.csv", row.names = FA
 # Tabla de frecuencias
 table(secom_data$Pass.Fail)
 
-# Gr·fico de barras
+# Gr√°fico de barras
 barplot(
   table(secom_data$Pass.Fail), 
   col = c("red", "green"), 
-  main = "DistributiÛn de Pass/Fail", 
+  main = "Distributi√≥n de Pass/Fail", 
   xlab = "Stand", 
   ylab = "Frecuency"
 )
@@ -98,38 +98,38 @@ barplot(
 # CORRELACION
 # ===========
 
-# Seleccionar las columnas numÈricas
+# Seleccionar las columnas num√©ricas
 numeric_columns <- secom_data[, sapply(secom_data, is.numeric)]
 
-# Identificar columnas con desviaciÛn est·ndar cero
+# Identificar columnas con desviaci√≥n est√°ndar cero
 zero_sd_columns <- sapply(numeric_columns, function(col) sd(col, na.rm = TRUE) == 0)
 
 # Eliminar esas columnas
 numeric_columns <- numeric_columns[, !zero_sd_columns]
 
-# Confirmar que no quedan columnas con desviaciÛn est·ndar cero
+# Confirmar que no quedan columnas con desviaci√≥n est√°ndar cero
 if (any(sapply(numeric_columns, function(col) sd(col, na.rm = TRUE) == 0))) {
-  print("TodavÌa hay columnas con desviaciÛn est·ndar cero.")
+  print("Todav√≠a hay columnas con desviaci√≥n est√°ndar cero.")
 } else {
-  print("Todas las columnas con desviaciÛn est·ndar cero han sido eliminadas.")
+  print("Todas las columnas con desviaci√≥n est√°ndar cero han sido eliminadas.")
 }
 
-# Recalcular la matriz de correlaciÛn
+# Recalcular la matriz de correlaci√≥n
 cor_matrix <- cor(numeric_columns)
 
-# Identificar correlaciÛn con la variable objetivo
+# Identificar correlaci√≥n con la variable objetivo
 if ("Pass.Fail" %in% colnames(cor_matrix)) {
   cor_target <- cor_matrix["Pass.Fail", ]
   significant_vars <- names(cor_target[abs(cor_target) > 0.5]) # Umbral de 0.5
   print(significant_vars)
 } else {
-  print("No se encontrÛ correlaciÛn directa con Pass.Fail")
+  print("No se encontr√≥ correlaci√≥n directa con Pass.Fail")
 }
 
 # =============================
 # REDUCCION DE LA DIMENSION PCA
 # =============================
-# Escalo, las columnas numÈricas excluyendo la columna Pass/Fail
+# Escalo, las columnas num√©ricas excluyendo la columna Pass/Fail
 scaled_data <- scale(secom_data[, -c(1, ncol(secom_data))])
 
 # Identificar columnas con varianza cero
@@ -142,9 +142,9 @@ cat("Columnas constantes o nulas:", names(zero_var_columns[zero_var_columns]), "
 scaled_data <- scaled_data[, !zero_var_columns]
 
 # Confirmar dimensiones tras la limpieza
-cat("Dimensiones de scaled_data despuÈs de eliminar columnas constantes:", dim(scaled_data), "\n")
+cat("Dimensiones de scaled_data despu√©s de eliminar columnas constantes:", dim(scaled_data), "\n")
 
-# Escalar datos excluyendo columnas no numÈricas
+# Escalar datos excluyendo columnas no num√©ricas
 numeric_columns <- secom_data[, sapply(secom_data, is.numeric)]
 
 # Eliminar columnas con varianza cero
@@ -162,12 +162,12 @@ summary(pca_result)
 # Extraer la varianza explicada
 explained_variance <- pca_result$sdev^2 / sum(pca_result$sdev^2)
 
-# Graficar la varianza explicada con puntos y lÌneas
+# Graficar la varianza explicada con puntos y l√≠neas
 plot(
   explained_variance,
-  type = "b",  # Tipo de gr·fico: lÌnea con puntos
+  type = "b",  # Tipo de gr√°fico: l√≠nea con puntos
   pch = 16,    # Forma del punto
-  col = "blue",# Color de la lÌnea y los puntos
+  col = "blue",# Color de la l√≠nea y los puntos
   main = "Varianza Explicada por Componente", 
   xlab = "Componentes Principales", 
   ylab = "Varianza Explicada"
@@ -216,7 +216,7 @@ train_data <- train_data[, !colnames(train_data) %in% "Time"]
 test_data <- test_data[, !colnames(test_data) %in% "Time"]
 
 
-# Confirmar tamaÒos
+# Confirmar tama√±os
 dim(train_data)
 dim(test_data)
 
@@ -239,21 +239,21 @@ print(conf_matrix)
 # METRICAS DE EVALUACION
 # ======================
 
-# Calcular mÈtricas a partir de la matriz de confusiÛn
+# Calcular m√©tricas a partir de la matriz de confusi√≥n
 true_positive <- conf_matrix["Pass", "Pass"]
 true_negative <- conf_matrix["Fail", "Fail"]
 false_positive <- conf_matrix["Fail", "Pass"]
 false_negative <- conf_matrix["Pass", "Fail"]
 
-# MÈtricas
+# M√©tricas
 accuracy <- (true_positive + true_negative) / sum(conf_matrix)
 precision <- true_positive / (true_positive + false_positive)
 recall <- true_positive / (true_positive + false_negative)  # Sensibilidad
 specificity <- true_negative / (true_negative + false_positive)
 
-# Imprimir mÈtricas
-cat("PrecisiÛn (Accuracy):", round(accuracy, 2), "\n")
-cat("PrecisiÛn (Precision):", round(precision, 2), "\n")
+# Imprimir m√©tricas
+cat("Precisi√≥n (Accuracy):", round(accuracy, 2), "\n")
+cat("Precisi√≥n (Precision):", round(precision, 2), "\n")
 cat("Sensibilidad (Recall):", round(recall, 2), "\n")
 cat("Especificidad (Specificity):", round(specificity, 2), "\n")
 
@@ -274,14 +274,14 @@ auc(roc_curve)
 # Definir control de entrenamiento
 control <- trainControl(method = "cv", number = 5, verboseIter = TRUE)
 
-# Especificar la cuadrÌcula de hiperpar·metros
+# Especificar la cuadr√≠cula de hiperpar√°metros
 tune_grid <- expand.grid(
-  mtry = c(2, 5, 10),       # N˙mero de variables a considerar en cada split
+  mtry = c(2, 5, 10),       # N√∫mero de variables a considerar en cada split
   splitrule = "gini",       # Criterio para dividir
-  min.node.size = c(1, 5, 10)  # TamaÒo mÌnimo del nodo
+  min.node.size = c(1, 5, 10)  # Tama√±o m√≠nimo del nodo
 )
 
-# Ajustar el modelo con b˙squeda de hiperpar·metros
+# Ajustar el modelo con b√∫squeda de hiperpar√°metros
 set.seed(123)
 rf_tuned <- train(
   Pass.Fail ~ ., 
@@ -293,7 +293,7 @@ rf_tuned <- train(
 )
 
 # Evaluar el modelo optimizado
-# Ver los mejores hiperpar·metros
+# Ver los mejores hiperpar√°metros
 print(rf_tuned$bestTune)
 
 
@@ -316,29 +316,29 @@ rf_predictions <- predict(rf_tuned, test_data)
 # VALIDACION DE RESULTADOS
 # ========================
 
-# Matriz de confusiÛn
+# Matriz de confusi√≥n
 conf_matrix <- table(test_data$Pass.Fail, rf_predictions)
 print(conf_matrix)
 
-# PrecisiÛn
+# Precisi√≥n
 accuracy <- sum(diag(conf_matrix)) / sum(conf_matrix)
-cat("PrecisiÛn:", round(accuracy, 2), "\n")
+cat("Precisi√≥n:", round(accuracy, 2), "\n")
 
 # Predicciones en el conjunto de prueba
 rf_predictions <- predict(rf_tuned, test_data)
 
-# Matriz de confusiÛn
+# Matriz de confusi√≥n
 conf_matrix <- confusionMatrix(rf_predictions, test_data$Pass.Fail)
 print(conf_matrix)
 
-# MÈtricas adicionales
+# M√©tricas adicionales
 accuracy <- conf_matrix$overall["Accuracy"]
 precision <- conf_matrix$byClass["Precision"]
 recall <- conf_matrix$byClass["Recall"]
 specificity <- conf_matrix$byClass["Specificity"]
 
-cat("PrecisiÛn (Accuracy):", round(accuracy, 2), "\n")
-cat("PrecisiÛn (Precision):", round(precision, 2), "\n")
+cat("Precisi√≥n (Accuracy):", round(accuracy, 2), "\n")
+cat("Precisi√≥n (Precision):", round(precision, 2), "\n")
 cat("Sensibilidad (Recall):", round(recall, 2), "\n")
 cat("Especificidad (Specificity):", round(specificity, 2), "\n")
 

@@ -1,5 +1,5 @@
 # Script: xgboost_model.R
-# Objetivo: Usar XGBoost para predecir el resultado del proceso de fabricación (Pass/Fail)
+# Objetivo: Usar XGBoost para predecir el resultado del proceso de fabricaciÃ³n (Pass/Fail)
 # Conjunto de datos: cleaned_secom.csv (limpio y filtrado)
 
 library(xgboost)
@@ -13,14 +13,14 @@ library(ggplot2)
 # ============
 
 # Cargar datos
-file_path <- "C:/SECOM_Analysis/data/cleaned_secom.csv"
+file_path <- "data/cleaned_secom.csv"
 data <- fread(file_path)
 
 # Separar X e y
 X <- data[, !"Pass.Fail"]
 y <- ifelse(data$Pass.Fail == "Pass", 1, 0)
 
-# Convertir X a numérico
+# Convertir X a numÃ©rico
 X <- as.data.frame(X)
 X <- X[, sapply(X, is.numeric)]
 
@@ -61,7 +61,7 @@ dtest <- xgb.DMatrix(data = as.matrix(X_test), label = y_test)
 # AJUSTAR HIPERPARAMETROS
 # =======================
 
-# Parámetros ajustados
+# ParÃ¡metros ajustados
 params <- list(
   objective = "binary:logistic",
   eval_metric = "auc",
@@ -85,7 +85,7 @@ xgb_model <- xgb.train(
   nrounds = 100,
   watchlist = list(train = dtrain, test = dtest),
   early_stopping_rounds = 100,
-  print_every_n = 1,  # Progreso en cada iteración
+  print_every_n = 1,  # Progreso en cada iteraciÃ³n
   verbose = 1
 )
 
@@ -109,9 +109,9 @@ roc_curve <- roc(y_test, y_pred)
 
 # Calcular AUC
 auc_value <- auc(roc_curve)
-cat("Área bajo la curva (AUC):", auc_value, "\n")
+cat("Ãrea bajo la curva (AUC):", auc_value, "\n")
 
-# Crear gráfico de AUC con ggplot2
+# Crear grÃ¡fico de AUC con ggplot2
 roc_data <- data.frame(
   TPR = roc_curve$sensitivities, # Tasa de verdaderos positivos
   FPR = 1 - roc_curve$specificities # Tasa de falsos positivos
@@ -129,7 +129,7 @@ ggplot(roc_data, aes(x = FPR, y = TPR)) +
 # METRICAS
 # ========
 
-# Métricas
+# MÃ©tricas
 conf_matrix <- confusionMatrix(
   factor(y_pred_class, levels = c(0, 1)),
   factor(y_test, levels = c(0, 1))
@@ -140,28 +140,28 @@ precision <- conf_matrix$byClass["Precision"]
 
 cat("Sensibilidad (Recall):", sensitivity, "\n")
 cat("Especificidad:", specificity, "\n")
-cat("Precisión:", precision, "\n")
+cat("PrecisiÃ³n:", precision, "\n")
 
 # AUC
 roc_obj <- roc(y_test, y_pred)
 auc_value <- auc(roc_obj)
-cat("Área bajo la curva (AUC):", auc_value, "\n")
+cat("Ãrea bajo la curva (AUC):", auc_value, "\n")
 
 # ================================================
 # OBTENER LAS DIEZ CARACTERISTICAS MAS IMPORTANTES
 # ================================================
 
-# Obtener las 10 características más importantes
+# Obtener las 10 caracterÃ­sticas mÃ¡s importantes
 importance <- xgb.importance(feature_names = colnames(X_train), model = xgb_model)
 top_10_features <- importance[1:10, ]
 
-# Crear el gráfico
+# Crear el grÃ¡fico
 ggplot(top_10_features, aes(x = reorder(Feature, Gain), y = Gain)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   coord_flip() +
   labs(
-    title = "Top 10 características más importantes",
-    x = "Características",
+    title = "Top 10 caracterÃ­sticas mÃ¡s importantes",
+    x = "CaracterÃ­sticas",
     y = "Importancia (Gain)"
   ) +
   theme_minimal()

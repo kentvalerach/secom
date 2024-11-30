@@ -75,7 +75,7 @@ table(secom_data$Pass.Fail)
 # GUARDAR DATASET LIMPIO
 # =======================
 
-write.csv(secom_data, "C:/SECOM_Analysis/data/cleaned_secom.csv", row.names = FALSE)
+write.csv(secom_data, "data/cleaned_secom.csv", row.names = FALSE)
 
 
 # ==============

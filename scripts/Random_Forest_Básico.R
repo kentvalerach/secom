@@ -33,7 +33,7 @@ dim(secom_data)
 # Imputar valores faltantes con la mediana
 library(dplyr)
 secom_data <- secom_data %>%
-  mutate(across(everything(), ~ ifelse(is.na(.), median(., na.rm = TRUE), .)))
+  dplyr::mutate(dplyr::across(everything(), ~ ifelse(is.na(.), median(., na.rm = TRUE), .)))
 
 # Verificar que no queden valores faltantes
 colSums(is.na(secom_data))
@@ -51,8 +51,8 @@ dim(scaled_data)
 # ELIMINAR COLUMNAS CON VARIANZA CERO
 # ===================================
 
-# Calcular la varianza de cada columna
-col_var <- apply(scaled_data, 2, var)
+col_var <- apply(scaled_data, 2, stats::var)
+scaled_data <- scaled_data[, col_var > 0]
 
 # Filtrar columnas con varianza mayor a 0
 scaled_data <- scaled_data[, col_var > 0]
@@ -256,15 +256,15 @@ cat("Especificidad (Specificity):", round(specificity, 2), "\n")
 
 library(pROC)
 rf_prob <- predict(rf_model, test_data, type = "prob")[, 2]
-roc_curve <- roc(test_data$Pass.Fail, rf_prob, levels = c("Fail", "Pass"))
+roc_curve <- pROC::roc(test_data$Pass.Fail, rf_prob, levels = c("Fail", "Pass"))
 plot(roc_curve, main = "Curva ROC", col = "blue")
-auc(roc_curve)
-
+auc_value <- pROC::auc(roc_curve)
+cat("Área bajo la curva (AUC):", auc_value, "\n")
 
 # =======================================
 # VISUALIZAR IMPORTANCIA DE LAS VARIABLES
 # =======================================
 
-# Visualizar importancia de las variables
-var_imp <- varImp(rf_tuned)
+# Usar rf_model para mostrar importancia
+var_imp <- importance(rf_model)
 plot(var_imp, main = "Importancia de Variables")

@@ -5,14 +5,14 @@ library(pROC)
 library(ggplot2)
 
 # Cargar datos
-file_path <- "C:/SECOM_Analysis/data/cleaned_secom.csv"
+file_path <- "data/cleaned_secom.csv"
 data <- fread(file_path)
 
 # Separar X e y
 X <- data[, !"Pass.Fail"]
 y <- ifelse(data$Pass.Fail == "Pass", 1, 0)
 
-# Convertir X a numérico
+# Convertir X a numÃ©rico
 X <- as.data.frame(X)
 X <- X[, sapply(X, is.numeric)]
 
@@ -35,7 +35,7 @@ y_train <- balanced_data$Class
 dtrain <- xgb.DMatrix(data = X_train, label = y_train)
 dtest <- xgb.DMatrix(data = as.matrix(X_test), label = y_test)
 
-# Parámetros ajustados
+# ParÃ¡metros ajustados
 params <- list(
   objective = "binary:logistic",
   eval_metric = "auc",
@@ -59,7 +59,7 @@ xgb_model <- xgb.train(
 y_pred <- predict(xgb_model, dtest)
 y_pred_class <- ifelse(y_pred > 0.5, 1, 0)
 
-# Métricas
+# MÃ©tricas
 conf_matrix <- confusionMatrix(
   factor(y_pred_class, levels = c(0, 1)),
   factor(y_test, levels = c(0, 1))
@@ -70,24 +70,24 @@ precision <- conf_matrix$byClass["Precision"]
 
 cat("Sensibilidad (Recall):", sensitivity, "\n")
 cat("Especificidad:", specificity, "\n")
-cat("Precisión:", precision, "\n")
+cat("PrecisiÃ³n:", precision, "\n")
 
 # AUC
 roc_obj <- roc(y_test, y_pred)
 auc_value <- auc(roc_obj)
-cat("Área bajo la curva (AUC):", auc_value, "\n")
+cat("Ãrea bajo la curva (AUC):", auc_value, "\n")
 
-# Obtener las 10 características más importantes
+# Obtener las 10 caracterÃ­sticas mÃ¡s importantes
 importance <- xgb.importance(feature_names = colnames(X_train), model = xgb_model)
 top_10_features <- importance[1:10, ]
 
-# Crear el gráfico
+# Crear el grÃ¡fico
 ggplot(top_10_features, aes(x = reorder(Feature, Gain), y = Gain)) +
   geom_bar(stat = "identity", fill = "skyblue") +
   coord_flip() +
   labs(
-    title = "Top 10 características más importantes",
-    x = "Características",
+    title = "Top 10 caracterÃ­sticas mÃ¡s importantes",
+    x = "CaracterÃ­sticas",
     y = "Importancia (Gain)"
   ) +
   theme_minimal()

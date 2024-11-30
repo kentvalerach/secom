@@ -7,6 +7,7 @@ library(data.table)
 library(caret)
 library(pROC)
 library(ggplot2)
+library(dplyr)
 
 # ============
 # LOAD DATASET

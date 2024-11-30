@@ -81,7 +81,7 @@ El objetivo final es proporcionar recomendaciones accionables para mejorar la ca
 Antes de ejecutar los scripts, asegúrate de tener instalados los siguientes paquetes en R:
 
 ```R
-install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR2"))
+install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR2" , "dplyr"))
 
 
 

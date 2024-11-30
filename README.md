@@ -72,6 +72,8 @@ Este proyecto analiza datos de producción de una fábrica de chips para identif
 - [Informe Modelo Random Forest con Hiperparámetros](https://github.com/kentvalerach/secom/blob/main/Informe_ramdom_forest_Hiperparametros.pdf)
 - [Informe Modelo XGBoost](https://github.com/kentvalerach/secom/blob/main/Informe_modelo_xgboost.pdf)
 - [Statement of Work (SOW)](https://github.com/kentvalerach/secom/blob/main/Proyecto_Analisis_Datos_SOW.pdf)
+- [Hoja de ruta para el analisis de datos](https://github.com/kentvalerach/secom/blob/main/Informe_ramdom_forest_basico.pdf)
+- [Visualizaciones](https://github.com/kentvalerach/secom/blob/main/Informe_ramdom_forest_basico.pdf)
 
 El objetivo final es proporcionar recomendaciones accionables para mejorar la calidad y reducir costos en la producción de chips.
 

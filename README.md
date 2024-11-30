@@ -54,10 +54,10 @@ El objetivo de este proyecto es analizar datos de sensores provenientes de una f
 - **Mejoras:** Uso de validación cruzada y ajuste de hiperparámetros.
 
 ### **3. XGBoost**
-- **Precisión (Accuracy):** 94%
-- **Sensibilidad (Recall):** 100%
-- **Especificidad:** 70%
-- **Área Bajo la Curva (AUC):** 0.7519
+- **Precisión (Accuracy):** 97%
+- **Sensibilidad (Recall):** 62%
+- **Especificidad:** 76%
+- **Área Bajo la Curva (AUC):** 0.7711
 - **Observación:** Modelo final que muestra el mejor desempeño para identificar productos defectuosos.
 
 
@@ -81,7 +81,7 @@ El objetivo final es proporcionar recomendaciones accionables para mejorar la ca
 Antes de ejecutar los scripts, asegúrate de tener instalados los siguientes paquetes en R:
 
 ```R
-install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR"))
+install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR2"))
 
 
 

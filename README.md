@@ -2,7 +2,7 @@
 
 # **Optimización de la Calidad en la Producción de Chips: Un Enfoque Basado en Datos**
 
-Este repositorio contiene los scripts y resultados del análisis de datos llevado a cabo para predecir productos defectuosos y priorizar áreas de mejora en la producción de chips. Se implementaron tres modelos de machine learning: Random Forest básico, Random Forest con hiperparámetros y XGBoost, representando una evolución progresiva para un primer proyecto. La data utilizada para este analisis de datos es proporcionada por el sitio https://www.kaggle.com/datasets/paresh2047/uci-semcom
+Este repositorio contiene los scripts y resultados del análisis de datos llevado a cabo para predecir productos defectuosos y priorizar áreas de mejora en la producción de chips. Se implementaron tres modelos de machine learning: Random Forest básico, Random Forest con hiperparámetros y XGBoost, representando una evolución progresiva para un primer proyecto. La data utilizada para este analisis es proporcionada por el sitio https://www.kaggle.com/datasets/paresh2047/uci-semcom
 
 ---
 

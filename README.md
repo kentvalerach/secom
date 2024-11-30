@@ -79,7 +79,7 @@ El objetivo final es proporcionar recomendaciones accionables para mejorar la ca
 
 Nota: Usted podra visualizar los resultados de estos tres algoritmos de Machine Learning simplemente con acceder a su cuenta github y en la pestana superior derecha de color verde; en code, pulse mas para un codespace. Se abrira un terminal o consola (tardara unos minutos en cargar los paquetes necesarios) luego llame el comando: Rscript + la ruta, ejemplo: Rscript scripts/Modelo_XGBoost.R. desde su consola de codesspaces y listo.
 
-Para ejecutarlo en su entorno R descarge los paquetes que a continuacion se describen. Luego descarge los dos archivos de datos: para XGboost  "cleaned_secom.csv"   y "uci_secom.csv" para los modelos de Random Forest. Recuerde que debe enrutar en el script del modelo la data necesaria para el analisis. O enrutamiento para guardar la data luego del proceso de limpieza. (solo Random Forest write.csv(secom_data, "C:/ruta_para_guardar_tus_datos/cleaned_secom.csv", row.names = FALSE)
+Para ejecutarlo en su propio entorno R descarge los paquetes que a continuacion se describen. Luego descarge los dos archivos de datos: para XGboost  "cleaned_secom.csv"   y "uci_secom.csv" para los modelos de Random Forest. Recuerde que debe enrutar en el script del modelo la data necesaria para el analisis. O enrutamiento para guardar la data luego del proceso de limpieza. (solo Random Forest) Ejemplo en scripts Random Forest: write.csv(secom_data, "C:/ruta_para_guardar_tus_datos/cleaned_secom.csv", row.names = FALSE)
 Ejemplo en script XGboost: file_path <- "ruta_de_tu_descarga/cleaned_secom.csv" o en script Random_Forest secom_data <- read.csv("tu_ruta_de_descarga/uci_secom.csv")
 
 ---

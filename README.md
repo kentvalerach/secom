@@ -1,6 +1,6 @@
 # secom
 
-# Quality Optimization in Chip Production: A Data-Driven Approach** ** **Optimization of Quality in Chip Production: A Data-Driven Approach** **Optimization of Quality in Chip Production: A Data-Driven Approach**
+# Quality Optimization in Chip Production: A Data-Driven Approach**
 
 This repository contains the scripts and results of the data analysis carried out to predict defective products and prioritize areas of improvement in micro-chip production. In this particular case the data represents 590 processes with a given state that yields a Pass/Fail result. Three Machine Learning models were implemented: basic Random Forest, Random Forest with hyperparameters and XGboost, representing a progressive evolution for a first project. The data used for this analysis is provided by the site https://www.kaggle.com/datasets/paresh2047/uci-semcom.
 

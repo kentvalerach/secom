@@ -105,29 +105,23 @@ Note: You will be able to visualize the results of these three Machine Learning 
 
 To run it in your own R environment download the packages described below. Then download the two data files: for XGboost “cleaned_secom.csv” and “uci_secom.csv” for the Random Forest models. Remember to route in the model script the data needed for the analysis. Example in Random Forest scripts: write.csv(secom_data, “C:/route_to_save_your_data/cleaned_secom.csv”, row.names = FALSE)
 Example in XGboost script: file_path <- “path_of_your_download/cleaned_secom.csv” or in Random_Forest scripts; secom_data <- read.csv(“your_download_path/uci_secom.csv”). 
-
----
-## **Requirements**
-
-Before running the scripts, make sure you have the following packages installed in R:
-
-```R
-install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR2" , "dplyr"))
-
 El objetivo final es proporcionar recomendaciones accionables para mejorar la calidad y reducir costos en la producción de chips, mejorando los atascos en la cola de produccion. 
 
 Nota: Usted podra visualizar los resultados de estos tres algoritmos de Machine Learning simplemente con acceder a su cuenta github y en la pestana superior derecha de color verde; en code, pulse mas para un codespace. Se abrira un terminal o consola (tardara unos minutos en cargar los paquetes necesarios) luego llame el comando: Rscript + la ruta, ejemplo: Rscript scripts/Modelo_XGBoost.R desde su consola de codesspaces y listo.
 
 Para ejecutarlo en su propio entorno R descarge los paquetes que a continuacion se describen. Luego descarge los dos archivos de datos: para XGboost  "cleaned_secom.csv"   y "uci_secom.csv" para los modelos de Random Forest. Recuerde que debe enrutar en el script del modelo la data necesaria para el analisis. O enrutamiento para guardar la data luego del proceso de limpieza. (solo en modelos  Random Forest) Ejemplo en scripts Random Forest: write.csv(secom_data, "C:/ruta_para_guardar_tus_datos/cleaned_secom.csv", row.names = FALSE)
 Ejemplo en script XGboost: file_path <- "ruta_de_tu_descarga/cleaned_secom.csv" o en scripts Random_Forest;    secom_data <- read.csv("tu_ruta_de_descarga/uci_secom.csv") 
-
 ---
-## **Requisitos**
+## **Requirements / Requisitos**
 
+Before running the scripts, make sure you have the following packages installed in R:
 Antes de ejecutar los scripts, asegúrate de tener instalados los siguientes paquetes en R:
-
 ```R
 install.packages(c("tidyverse", "caret", "xgboost", "randomForest", "pROC", "DMwR2" , "dplyr"))
+
+
+
+---
 
 
 

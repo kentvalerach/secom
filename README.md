@@ -1,23 +1,37 @@
 # secom
 
+# Quality Optimization in Chip Production: A Data-Driven Approach** ** **Optimization of Quality in Chip Production: A Data-Driven Approach** **Optimization of Quality in Chip Production: A Data-Driven Approach**
+
+This repository contains the scripts and results of the data analysis carried out to predict defective products and prioritize areas of improvement in micro-chip production. In this particular case the data represents 590 processes with a given state that yields a Pass/Fail result. Three Machine Learning models were implemented: basic Random Forest, Random Forest with hyperparameters and XGboost, representing a progressive evolution for a first project. The data used for this analysis is provided by the site https://www.kaggle.com/datasets/paresh2047/uci-semcom.
+
+# secom
+
 # **Optimización de la Calidad en la Producción de Chips: Un Enfoque Basado en Datos**
 
 Este repositorio contiene los scripts y resultados del análisis de datos llevado a cabo para predecir productos defectuosos y priorizar áreas de mejora en la producción de micro-chips. En este particular la data representa 590 procesos con un estado determinado que arroja un resultado Pass/Fail. Se implementaron tres modelos de Machine Learning: Random Forest básico, Random Forest con hiperparámetros y XGboost, representando una evolución progresiva para un primer proyecto. La data utilizada para este analisis es proporcionada por el sitio https://www.kaggle.com/datasets/paresh2047/uci-semcom
 
 ---
 
+## **Repository content**
 ## **Contenido del Repositorio**
 
-- **`data/`**: Archivos de datos, incluyendo el conjunto de datos original (`uci_secom.csv`) y el conjunto limpio (`cleaned_secom.csv`).
-- **`scripts/`**: Scripts en R utilizados para el análisis y entrenamiento de modelos.
-  - `secom_random_forest.R`: Implementación de Random Forest básico.
-  - `secom_random_forest_hyperparameters.R`: Random Forest con optimización de hiperparámetros.
-  - `secom_data_xboost.R`: Implementación de XGBoost.
-- **`results/`**: `Informes de la elaboración de scripts paso a paso con métricas generadas por los modelos, conclusiones, visualizaciones, ajustes y optimizacion,` `SOW,` `Hoja de ruta analisis de datos.`
+- **`data/`**: Archivos de datos, incluyendo datos originales (`uci_secom.csv`) y datos limpios (`cleaned_secom.csv`)/Data files, including original data (`uci_secom.csv`) and clean data (`cleaned_secom.csv`).
+- **`scripts/`**: Scripts en R utilizados para el análisis y entrenamiento de modelos/R scripts used for model analysis and training.
+  - `secom_random_forest.R`: Implementación de Random Forest básico / Implementation of basic Random Forest.
+  - `secom_random_forest_hyperparameters.R`: Random Forest con optimización de hiperparámetros / Random Forest with hyperparameter optimization.
+  - `secom_data_xboost.R`: Implementación de modelo XGBoost / XGBoost model implementation.
+- **`results/`**: `Informes de la elaboración de scripts paso a paso con métricas generadas por los modelos, conclusiones, visualizaciones, ajustes y optimizacion,` `SOW,` `Hoja de ruta analisis de datos` / Step-by-step scripting reports with model-generated metrics, conclusions, visualizations, adjustments and optimization, `SOW,`  `Data analysis roadmap`.
  
-- **`README.md`**: Este archivo de documentación.
+- **`README.md`**: Este archivo de documentación / This documentation archive.
 
 ---
+
+## **Project Description**
+
+The objective of this project is to analyze sensor data from a chip factory to:
+1. predict whether a product will be defective (Pass/Fail).
+2. Identify critical sensors in the production process.
+3. Propose improvements in the quality of the process based on the findings.
 
 ## **Descripción del Proyecto**
 
@@ -28,6 +42,14 @@ El objetivo de este proyecto es analizar datos de sensores provenientes de una f
 
 ---
 
+**Steps of Analysis** 
+
+1. **Questioning:** Define the customer's needs.
+2. **Prepare:** Data cleansing and normalization.
+3. **Process:** Training of three predictive models.
+4. **Analyze:** Evaluation of model performance and analysis of important features.
+5. **Sharing:** Creation of visualizations and reports.
+6. **Acting:** Proposal of recommendations based on the results.
 ### **Pasos del Análisis**
 
 1. **Preguntar:** Definir las necesidades del cliente.

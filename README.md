@@ -105,6 +105,8 @@ Note: You will be able to visualize the results of these three Machine Learning 
 
 To run it in your own R environment download the packages described below. Then download the two data files: for XGboost “cleaned_secom.csv” and “uci_secom.csv” for the Random Forest models. Remember to route in the model script the data needed for the analysis. Example in Random Forest scripts: write.csv(secom_data, “C:/route_to_save_your_data/cleaned_secom.csv”, row.names = FALSE)
 Example in XGboost script: file_path <- “path_of_your_download/cleaned_secom.csv” or in Random_Forest scripts; secom_data <- read.csv(“your_download_path/uci_secom.csv”). 
+
+
 El objetivo final es proporcionar recomendaciones accionables para mejorar la calidad y reducir costos en la producción de chips, mejorando los atascos en la cola de produccion. 
 
 Nota: Usted podra visualizar los resultados de estos tres algoritmos de Machine Learning simplemente con acceder a su cuenta github y en la pestana superior derecha de color verde; en code, pulse mas para un codespace. Se abrira un terminal o consola (tardara unos minutos en cargar los paquetes necesarios) luego llame el comando: Rscript + la ruta, ejemplo: Rscript scripts/Modelo_XGBoost.R desde su consola de codesspaces y listo.

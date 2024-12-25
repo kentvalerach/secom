@@ -59,7 +59,7 @@ El objetivo de este proyecto es analizar datos de sensores provenientes de una f
 
 ---
 
-## **Modelos Implementados y Resultados**
+## **Implemented Models and Results / Modelos Implementados y Resultados**
 
 ### **1. Random Forest Básic**
 - **Precisión (Accuracy):** 70%
@@ -67,7 +67,7 @@ El objetivo de este proyecto es analizar datos de sensores provenientes de una f
 - **Especificidad (Specificity):** 70%
 - **Observatión:** An initial model to establish a predictive baseline / Un modelo inicial para establecer una línea base de predicción.
 
-### **2. Random Forest con Hiperparámetros**
+### **2. Random Forest with Hyperparameters**
 - **Precisión (Accuracy):** 68%
 - **Sensibilidad (Recall):** 70%
 - **Especificidad (Specificity):** 65%
@@ -86,6 +86,7 @@ El objetivo de este proyecto es analizar datos de sensores provenientes de una f
 ###  **Project Summary**
 
 This project analyzes production data from a chip fab to identify patterns in defects and propose data-driven improvement strategies. The problem is approached as a binary classification problem since the target variable is categorical. Three predictive models were developed to classify defective products: a basic Random Forest model, an optimized model with hyperparameters, and an XGBoost model. Each model was evaluated in terms of accuracy, sensitivity and AUC to determine its effectiveness on the task. 
+
 ### **Resumen del Proyecto**
 
 Este proyecto analiza datos de producción de una fábrica de chips para identificar patrones en los defectos y proponer estrategias de mejora basadas en datos. Se aborda el problema como una clasificacion binaria ya que la variable objetivo es categórica. Se desarrollaron tres modelos predictivos para clasificar productos defectuosos: un modelo básico de Random Forest, un modelo optimizado con hiperparámetros y un modelo XGBoost. Cada modelo fue evaluado en términos de precisión, sensibilidad y AUC para determinar su efectividad en la tarea. 
